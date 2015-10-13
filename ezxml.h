@@ -76,6 +76,10 @@ ezxml_t ezxml_parse_fp(FILE *fp);
 // if not found
 ezxml_t ezxml_child(ezxml_t xml, const char *name);
 
+// returns the first child tag (one level deeper) or NULL if not found
+// this will iterate ONLY over the FIRST child of each tag-name group!
+ezxml_t ezxml_child_any(ezxml_t xml);
+
 // returns the next tag of the same name in the same section and depth or NULL
 // if not found
 #define ezxml_next(xml) ((xml) ? xml->next : NULL)

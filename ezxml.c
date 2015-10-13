@@ -64,6 +64,15 @@ ezxml_t ezxml_child(ezxml_t xml, const char *name)
     return xml;
 }
 
+// returns the first child tag of any name or NULL if not found
+// this will iterate ONLY over the FIRST child of each tag-name group!
+ezxml_t ezxml_child_any(ezxml_t xml)
+{
+    xml = (xml) ? xml->child : NULL;
+    //while (xml) xml = xml->sibling;
+    return xml;
+}
+
 // returns the Nth tag with the same name in the same subsection or NULL if not
 // found
 ezxml_t ezxml_idx(ezxml_t xml, int idx)
