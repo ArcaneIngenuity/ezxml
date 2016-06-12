@@ -22,9 +22,16 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+ //these lines each attempt to enable strdup in string.h
+#define _POSIX_C_SOURCE 200809L
+#define _BSD_SOURCE 1
+#define _SVID_SOURCE 1
+#define _XOPEN_SOURCE 700
+ 
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
+
 #include <string.h>
 #include <ctype.h>
 #include <unistd.h>
